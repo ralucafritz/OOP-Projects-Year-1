@@ -41,7 +41,7 @@ Abonat (char* nr_telefon, Abonament x) : Persoana
 
 - Monovolumele pot fi achiziționate atât noi cât și second hand. La cele achiziționate second hand, se percepe un discount proporțional cu numărul de ani vechime ai mașinii.
 
-- Pentru toate automobilele, în lunile de vară, se beneficiazăde zile promoționale cu reducere fixă de 10% din preț. 
+- Pentru toate automobilele, în lunile de vară, se beneficiază de zile promoționale cu reducere fixă de 10% din preț. 
 
 - Structura de date: `set<pair<tip_automobil, bool nou>>` (nou = false pentru cele sh)
 
