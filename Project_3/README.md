@@ -6,14 +6,14 @@
 ### Cerinta:
 
 - Dintr-un parc auto se poate cumpăra o gamă variată de automobile de următoarele tipuri: 
-  - `MINI` (mașină de oraș, de mic litraj, de obiceisub 4m lungime)
+  - `MINI` (mașină de oraș, de mic litraj, de obicei sub 4m lungime)
   - `MICA` (mașină de oraș, cu spațiu interior mai mare decât MINI și lungime între 3.85 și 4.1) 
   - `COMPACTA` (mașină ușor de folosit, atât în oraș, cât și la drum lung, de dimensiune 4.2 – 4.5m; acest tip de mașini are formă de hatchback, combi sau sedan) 
   - `MONOVOLUME` (automobile sub formă de van, ce pot transporta 5-7 persoane). 
 
 - Monovolumele pot fi achiziționate atât noi cât și second hand. La cele achiziționate second hand, se percepe un discount proporțional cu numărul de ani vechime ai mașinii.
 
-- Pentru toate automobilele, în lunile de vară, se beneficiazăde zile promoționale cu reducere fixă de 10% din preț. 
+- Pentru toate automobilele, în lunile de vară, se beneficiază de zile promoționale cu reducere fixă de 10% din preț. 
 
 - Structura de date: `set<pair<tip_automobil, bool nou>>` (nou = false pentru cele sh)
 
