@@ -34,109 +34,60 @@ Abonat (char* nr_telefon, Abonament x) : Persoana
   
 - Memoria este eliberata unde este nevoie (destructori si alte locuri in care este alocata memoria dinamic).
   
-- Am folosit concepte de upcasting in mai multe metode:
-
+- Am folosit concepte de upcasting in mai multe metode din clasele `Abonament_Premium` si `Abonat`
     ```cpp
-    Abonament_premium::Abonament_premium(int reducere, Abonament &a)
-    {
         Abonament *upcast = this;
         *upcast = a;
-
-        this->reducere = reducere;
-    }
     ```
-
     ```cpp
-    std::istream &operator >> (std::istream &citire, Abonament_premium &abonament_premium1)
-    {
-        Abonament a;
-        citire >> a;
-        Abonament *upcast = &abonament_premium1;
-        *upcast = a;
-
-        std::cout << "Introduceti reducerea abonamentului " << std::endl;
-        Util::validare_int(citire, abonament_premium1.reducere);
-
-        return citire;
-    }
-    ```
-
-    ```cpp
-    std::ostream &operator << (std::ostream &scriere, Abonament_premium &abonament_premium1)
-    {
-        Abonament *upcast = &abonament_premium1;
-    
-        return abonament_premium1.afisare(scriere, *upcast);
-    }
-    ```
-    
-    ```cpp
-    Abonat::Abonat(const Persoana &p, char *nr_telefon)
-    {
         Persoana *upcast = this;
         *upcast = p;
-    
-        this->nr_telefon = new char[strlen(nr_telefon) + 1];
-        strcpy(this->nr_telefon, nr_telefon);
-    }
     ```
-
 - Am folosit concepte de functii virtuale:
   - in Abonament:
     ```cpp
-    virtual float de_plata();
-    virtual bool este_premium();
+        virtual float de_plata();
+        virtual bool este_premium();
     ```
     ```cpp
-    float Abonament::de_plata()
-    {
-        return perioada * pret;
-    }
+        float Abonament::de_plata()
+        {
+            return perioada * pret;
+        }
 
-    bool Abonament::este_premium()
-    {
-        return false;
-    }
+        bool Abonament::este_premium()
+        {
+            return false;
+        }
     ```
   - in Abonament_premium:
     ```cpp
-    float de_plata() override;
-    bool este_premium() override;
+        float de_plata() override;
+        bool este_premium() override;
     ```
     ```cpp
-    float Abonament_premium::de_plata()
-    {
-        return Abonament::de_plata() * (1 - (float) reducere / (float) 100);
-    }
+        float Abonament_premium::de_plata()
+        {
+            return Abonament::de_plata() * (1 - (float) reducere / (float) 100);
+        }
 
-    bool Abonament_premium::este_premium()
+        bool Abonament_premium::este_premium()
 
-        return true;
-    }
+            return true;
+        }
     ```
 - Am folosit functii:
   - `const`, functiile get:
     ```cpp
-    char *Abonament::get_nume_abonament() const
-    {
-        return nume_abonament;
-    }
-
-    float Abonament::get_pret() const
-    {
-        return pret;
-    }
-
-    int Abonament::get_perioada() const
-    {
-        return perioada;
-    }
+        char *get_nume_abonament() const;
+        float get_pret() const;
+        int get_perioada() const;
     ```
   - statice:
     ```cpp
-    static void validare_int(std::istream &citire, int &dest);
-    static void validare_float(std::istream &citire, float &dest);
-    static void print_menu();
+        static void validare_int(std::istream &citire, int &dest);
+        static void validare_float(std::istream &citire, float &dest);
+        static void print_menu();
     ```
 - Am adaugat meniu interactiv prin care se pot:
   - adauga un client
@@ -156,6 +107,10 @@ Abonat (char* nr_telefon, Abonament x) : Persoana
     7. Terminarea programului
     Alegeti o optiune:
     ```
+
+
+##### EXEMPLE DIN CONSOLA:
+
 Adaugare client + afisare lista curenta:  
 [exemplu din consola](https://gcdnb.pbrd.co/images/Lt1J587MkRn6.png?o=1)
 

@@ -37,35 +37,35 @@
 - Am utilizat si definit template si specializarea lui
 - Am tratat cateva exceptii foarte minimalistic, un exemplu este:
 ```cpp
-if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
-    {
-        cout << "EROARE -> Lungimea acestei masini trebuie sa fie intre 4.2 si 4.5 metri. " << endl
-             << "Introduceti lungimea corecta: " << endl;
-
-        while(true)
+    if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
         {
-            try
-            {
-                citire >> numarFloat;
-                if(citire.fail())
-                {
-                    throw 10;
-                }
-                if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
-                {
-                    throw 20;
-                }
-                car1.set_lungime(numarFloat);
-                break;
-            }
-            catch (int err)
-            {
-                cout << "EROARE -> Lungimea acestei masini trebuie sa fie intre 4.2 si 4.5 metri. " << endl
-                     << "Introduceti lungimea corecta: " << endl;
-            }
+            cout << "EROARE -> Lungimea acestei masini trebuie sa fie intre 4.2 si 4.   5 metri. " << endl
+                 << "Introduceti lungimea corecta: " << endl;
 
+            while(true)
+            {
+                try
+                {
+                    citire >> numarFloat;
+                    if(citire.fail())
+                    {
+                        throw 10;
+                    }
+                    if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
+                    {
+                        throw 20;
+                    }
+                    car1.set_lungime(numarFloat);
+                    break;
+                }
+                catch (int err)
+                {
+                    cout << "EROARE -> Lungimea acestei masini trebuie sa fie intre 4.  2 si 4.5 metri. " << endl
+                         << "Introduceti lungimea corecta: " << endl;
+                }
+
+            }
         }
-    }
 ```
 - Am folosit concepte de `upcasting` in clasele derivate:
 ```cpp
@@ -75,24 +75,23 @@ if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
 - Am folosit concepte de `functii virtuale`:
   - In clasa de baza `Car` si in clasele derivate `Mini`, `Mica`,  `Compacta` si `Monovolume`:
     ```cpp
-    virtual void citire(istream &citire, Car &car1);
-    virtual void afisare(ostream &scriere, const Car &car1) const;
+        virtual void citire(istream &citire, Car &car1);
+        virtual void afisare(ostream &scriere, const Car &car1) const;
     ```
     - fiecare citire si afisare fiind unica pentru fiecare clasa derivata
   - In template `Vanzare`:
     ```cpp
-    virtual void citire(istream &citire, Vanzare<T> &vanzare1);
-    virtual void afisare(ostream &scriere, const Vanzare<T> &vanzare1) const;
+        virtual void citire(istream &citire, Vanzare<T> &vanzare1);
+        virtual void afisare(ostream &scriere, const Vanzare<T> &vanzare1) const;
     ```
   - In template `Vanzare<Monovolume>`:
     ```cpp
-    virtual void citire(istream &citire, Vanzare<Monovolume> &vanzareM);
-    virtual void afisare(ostream &scriere, const Vanzare<Monovolume> & vanzareM) const;
+        virtual void citire(istream &citire, Vanzare<Monovolume> &vanzareM);
+        virtual void afisare(ostream &scriere, const Vanzare<Monovolume> & vanzareM) const;
     ```
 - Am ilustrat concepte de `RTTI` raportat la template-uri utilizand `dynamic_cast` in `template<class T> Vanzare`:
 ```cpp
-    const Monovolume* downcast = dynamic_cast<const Monovolume*>((*i    first);
-}
+    const Monovolume* downcast = dynamic_cast<const Monovolume*>((*i first);
 ```
 - Am utilizat functii `const`:
 ```cpp
@@ -104,8 +103,13 @@ if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
     float get_reducere() const;
     float get_litraj() const;
 ```
-- Am utilizat `functii statice` si o `variabila statica`:
+- Am utilizat `functii statice` si o `variabila statica` in clasa `Car`:
 ```cpp
+    // Variabile:
+    static int id_curent;
+```
+```cpp
+    // Functii:
     static bool este_vara();
     static std::string car_type(int car_type);
     static std::string forma(int forma);
@@ -114,13 +118,7 @@ if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
     static void validare_int(std::istream &citire, int &dest);
     static void validare_float(std::istream &citire, float &dest);
     static void print_menu();
-};
-```
-```cpp
-class Car
-{
-private:
-    static int id_curent;
+
 ```
 - Am adaugat meniu interactiv prin care se pot:
   - Adauga numarul de masini din stoc si cele vandute + listele masinilor din stoc si celor vandute
@@ -149,7 +147,8 @@ private:
 11. Terminarea programului
 Alegeti o optiune:  
 ```
-  
+
+##### EXEMPLE DIN CONSOLA:
 Citire masini stoc: masini vandute (optiunea 1):   
 [exemplu din consola(1)](https://gcdnb.pbrd.co/images/RYkJrEM2FpF4.png?o=1), [exemplu din consola(2)](https://gcdnb.pbrd.co/images/Cu74iYYdA4mZ.png?o=1)
 
