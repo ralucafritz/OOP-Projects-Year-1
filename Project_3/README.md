@@ -35,7 +35,7 @@
   
 - Am folosit STL folosind `set<pair<T*,bool>>` si `pair<T*,bool>` 
 - Am utilizat si definit template si specializarea lui
-- Am tratat cateva exceptii:
+- Am tratat cateva exceptii foarte minimalistic, un exemplu este:
 ```cpp
 if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
     {
@@ -67,186 +67,31 @@ if(car1.get_lungime() >= 4.5 && car1.get_lungime() <= 4.2)
         }
     }
 ```
-```cpp 
- if(car1.get_lungime() >= 4.1 && car1.get_lungime() <= 3.85)
-    {
-        cout << "EROARE -> Lungimea acestei masini trebuie sa fie intre 3.85 si 4.1 metri. " << endl
-             << "Introduceti lungimea corecta: " << endl;
-
-        while(true)
-        {
-            try
-            {
-                citire >> numarFloat;
-                if(citire.fail())
-                {
-                    throw 1;
-                }
-                if(car1.get_lungime() >= 4.1 && car1.get_lungime() <= 3.85)
-                {
-                    throw 2;
-                }
-                car1.set_lungime(numarFloat);
-                break;
-            }
-            catch (int err)
-            {
-                cout << "EROARE -> Lungimea acestei masini trebuie sa fie intre 3.85 si 4.1 metri. " << endl
-                     << "Introduceti lungimea corecta: " << endl;
-            }
-
-        }
-    }
-```
-- Am folosit concepte de `upcasting`:
+- Am folosit concepte de `upcasting` in clasele derivate:
 ```cpp
-Monovolume::Monovolume(int ani_vechime, int max_transport, Car &car1)
-{
     Car *upcast = this;
     *upcast = car1;
-    .
-    .
-}
-```
-```cpp
-Mini::Mini(Car &car1)
-{
-    Car *upcast = this;
-    *upcast = car1;
-    .
-    .
-}
-```
-```cpp
-void Monovolume::citire(istream &citire, Car &car1)
-{
-    int numarInt;
-    car1.set_car_type(3);
-    car1.set_forma(4);
-    Car car2 = car1;
-    citire >> car2;
-
-    Car* upcast = this;
-    *upcast = car2;
-    .
-    .
-}
 ```
 - Am folosit concepte de `functii virtuale`:
-  - In clasa de baza `Car`:
+  - In clasa de baza `Car` si in clasele derivate `Mini`, `Mica`,  `Compacta` si `Monovolume`:
     ```cpp
     virtual void citire(istream &citire, Car &car1);
     virtual void afisare(ostream &scriere, const Car &car1) const;
     ```
-  - In clasa derivata `Mini`:
-    ```cpp
-    class Mini: public Car
-    {
-    private:
-        virtual void citire(istream &citire, Car &car1);
-        virtual void afisare(ostream &scriere, const Car &car1) const;
-        .
-        .
-    }
-    ```
-  - In clasa derivata `Mica`:
-    ```cpp
-    class Mica: public Car
-    {
-    private:
-        virtual void citire(istream &citire, Car &car1);
-        virtual void afisare(ostream &scriere, const Car &car1) const;
-        .
-        .
-    }
-    ```
-  - In clasa derivata `Compacta`:
-    ```cpp
-    class Compacta: public Car
-    {
-    private:
-        virtual void citire(istream &citire, Car &car1);
-        virtual void afisare(ostream &scriere, const Car &car1) const;
-        .
-        .
-    }
-    ```
-  - In clasa derivata `Monovolume`:
-    ```cpp
-    class Monovolume: public Car
-    {
-    private:
-        int ani_vechime;
-        int max_transport;
-
-        virtual void citire(istream &citire, Car &car1);
-        virtual void afisare(ostream &scriere, const Car &car1) const;
-        .
-        .
-    }
-    ```
+    - fiecare citire si afisare fiind unica pentru fiecare clasa derivata
   - In template `Vanzare`:
     ```cpp
-    template <class T>
-    class Vanzare
-    {
-    private:
-        int nr_total_masini; // -- automat
-        int nr_masini_vandute; // ++ automat
-        set <pair<T*, bool> > stoc;
-        set <pair<T*, bool> > vandute;
-
-        virtual void citire(istream &citire, Vanzare<T> &vanzare1);
-        virtual void afisare(ostream &scriere, const Vanzare<T> &vanzare1) const;
-        .
-        .
-    }
+    virtual void citire(istream &citire, Vanzare<T> &vanzare1);
+    virtual void afisare(ostream &scriere, const Vanzare<T> &vanzare1) const;
     ```
   - In template `Vanzare<Monovolume>`:
     ```cpp
-    template <> class Vanzare <Monovolume>
-    {
-    private:
-        int nr_masini;
-        int nr_vandute;
-        set<pair<Monovolume*, bool> > stoc;
-        set<pair<Monovolume*, bool> > vandute;
-
-        virtual void citire(istream &citire, Vanzare<Monovolume> &vanzareM);
-        virtual void afisare(ostream &scriere, const Vanzare<Monovolume> &vanzareM) const;
-        .
-        .
-    }
+    virtual void citire(istream &citire, Vanzare<Monovolume> &vanzareM);
+    virtual void afisare(ostream &scriere, const Vanzare<Monovolume> & vanzareM) const;
     ```
 - Am ilustrat concepte de `RTTI` raportat la template-uri utilizand `dynamic_cast` in `template<class T> Vanzare`:
 ```cpp
-template<class T>
-void Vanzare<T>::afisare(ostream &scriere, const Vanzare<T>  &vanzare1) const
-{
-    int numar;
-    typename set<pair<T*, bool> >::iterator i;
-    if(nr_total_masini != 0)
-    {
-        scriere << "Numatul total de masini in stoc este: " << nr_total_masini << endl
-                << "---------------------------------Lista masini in stoc: ---------------------------------" << endl;
-        numar = 1;
-        for (i = stoc.begin(); i != stoc.end(); i++)
-        {
-            scriere << "----------------- Masina # " << numar << " -----------------" << endl;
-            numar++;
-            const Monovolume* downcast = dynamic_cast<const Monovolume*>((*i).first);
-            if(downcast)
-            {
-                downcast->afisare_monovolume();
-            }
-            else
-            {
-                scriere<< *(*i).first << endl;
-            }
-
-        }
-    .
-    .
+    const Monovolume* downcast = dynamic_cast<const Monovolume*>((*i    first);
 }
 ```
 - Am utilizat functii `const`:
@@ -261,9 +106,6 @@ void Vanzare<T>::afisare(ostream &scriere, const Vanzare<T>  &vanzare1) const
 ```
 - Am utilizat `functii statice` si o `variabila statica`:
 ```cpp
-class Util
-{
-public:
     static bool este_vara();
     static std::string car_type(int car_type);
     static std::string forma(int forma);
@@ -278,14 +120,6 @@ public:
 class Car
 {
 private:
-    string nume;
-    float pret;
-    float lungime;
-    string car_type;
-    string forma;
-    float reducere;
-    float litraj;
-    int id;
     static int id_curent;
 ```
 - Am adaugat meniu interactiv prin care se pot:
