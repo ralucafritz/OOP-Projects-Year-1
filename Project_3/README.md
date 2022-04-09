@@ -23,6 +23,8 @@
 
 - Să se adauge toate câmpurile relevante pentru modelarea acestei probleme.
 
+- Să se construiasca o specializare pentru tipul `MONOVOLUM` care să conțină și să afișeze/gestioneze doar `MONOVOLUMELE`
+
 ### Rezolvare:
 
 - Am creat toate clasele cerute + parametrii respectivi si am adaugat diverse metode pe care le folosim sau am considerat ca ar putea fi folosite ulterior.
