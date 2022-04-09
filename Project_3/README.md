@@ -316,40 +316,40 @@ private:
 Alegeti o optiune:  
 ```
   
-Citire masini stoc: masini vandute (optiunea 1): 
+Citire masini stoc: masini vandute (optiunea 1):   
 [exemplu din consola(1)](https://gcdnb.pbrd.co/images/RYkJrEM2FpF4.png?o=1)
 [exemplu din consola(2)](ttps://gcdnb.pbrd.co/images/Cu74iYYdA4mZ.png?o=1)
 
-Afisare masini stoc + masini vandute (optiunea 2):  
+Afisare masini stoc + masini vandute (optiunea 2):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/J6HKENjmQpZN.png?o=1)
 
-Afisare masini stoc (optiunea 3):  
+Afisare masini stoc (optiunea 3):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/e7KyDxjpk2u8.png?o=1)
 
 Vinderea unei masini (optiunea 5): stergem a 2-a masina:  
 [exemplu din consola](https://gcdnb.pbrd.co/images/Ku90706lkT4s.png?o=1)
 
-Afisare masini vandute (optiunea 4):  
+Afisare masini vandute (optiunea 4):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/V8bmlgvCqw3C.png?o=1)
 
-Afisare masini stoc + vandute (optiunea 2):  
-[exemplu din consola(https://gcdnb.pbrd.co/images/YP1mjjKepcVT.png?o=1)
+Afisare masini stoc + vandute (optiunea 2):    
+[exemplu din consola](https://gcdnb.pbrd.co/images/YP1mjjKepcVT.png?o=1)
 
-Citire masini stoc + masini vandute (optiunea 6):  
+Citire masini stoc + masini vandute (optiunea 6):    
 [exemplu din consola(1)](https://gcdnb.pbrd.co/images/9R9FGxmaGc0s.png?o=1)  
 [exemplu din consola(2)](https://gcdnb.pbrd.co/images/mLduuMumqbSV.png?o=1)
  
-Afisare masini stoc + masini vandute (optiunea 7):  
+Afisare masini stoc + masini vandute (optiunea 7):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/tfmMutD0QEZA.png?o=1)
 
-Afisare masini stoc (optiunea 8):  
+Afisare masini stoc (optiunea 8):   
 [exemplu din consola](https://gcdnb.pbrd.co/images/SKFhsLHuRcDZ.png?o=1)
 
-Vinderea unei masini (optiunea 10): stergem a 2-a masina:  
+Vinderea unei masini (optiunea 10): stergem a 2-a masina:    
 [exemplu din consola](https://gcdnb.pbrd.co/images/ocKALmIfun7o.png?o=1)
 
-Afisare masini vandute (optiunea 9):  
+Afisare masini vandute (optiunea 9):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/loFkEcKyPrOs.png?o=1)
 
-Afisare masini stoc + vandute (optiunea 7):  
+Afisare masini stoc + vandute (optiunea 7):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/uFvYpYgfkjYN.png?o=1)
