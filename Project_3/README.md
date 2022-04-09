@@ -317,8 +317,7 @@ Alegeti o optiune:
 ```
   
 Citire masini stoc: masini vandute (optiunea 1):   
-[exemplu din consola(1)](https://gcdnb.pbrd.co/images/RYkJrEM2FpF4.png?o=1)  
-[exemplu din consola(2)](ttps://gcdnb.pbrd.co/images/Cu74iYYdA4mZ.png?o=1)
+[exemplu din consola(1)](https://gcdnb.pbrd.co/images/RYkJrEM2FpF4.png?o=1), [exemplu din consola(2)](https://gcdnb.pbrd.co/images/Cu74iYYdA4mZ.png?o=1)
 
 Afisare masini stoc + masini vandute (optiunea 2):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/J6HKENjmQpZN.png?o=1)
@@ -336,8 +335,7 @@ Afisare masini stoc + vandute (optiunea 2):
 [exemplu din consola](https://gcdnb.pbrd.co/images/YP1mjjKepcVT.png?o=1)
 
 Citire masini stoc + masini vandute (optiunea 6):    
-[exemplu din consola(1)](https://gcdnb.pbrd.co/images/9R9FGxmaGc0s.png?o=1)  
-[exemplu din consola(2)](https://gcdnb.pbrd.co/images/mLduuMumqbSV.png?o=1)
+[exemplu din consola(1)](https://gcdnb.pbrd.co/images/9R9FGxmaGc0s.png?o=1), [exemplu din consola(2)](https://gcdnb.pbrd.co/images/mLduuMumqbSV.png?o=1)
  
 Afisare masini stoc + masini vandute (optiunea 7):    
 [exemplu din consola](https://gcdnb.pbrd.co/images/tfmMutD0QEZA.png?o=1)
