@@ -157,20 +157,20 @@ Abonat (char* nr_telefon, Abonament x) : Persoana
     Alegeti o optiune:
     ```
 Adaugare client + afisare lista curenta:
-![](https://gcdnb.pbrd.co/images/Lt1J587MkRn6.png?o=1)
+[exemplu din consola](https://gcdnb.pbrd.co/images/Lt1J587MkRn6.png?o=1)
 
 Adaugare element + afisare lista curenta:
-![](https://gcdnb.pbrd.co/images/ZaRX1Mi88Qzy.png?o=1)
-![](https://gcdnb.pbrd.co/images/rbu7ABCkvHbb.png?o=1)
+[exemplu din consola(1)](https://gcdnb.pbrd.co/images/ZaRX1Mi88Qzy.png?o=1)
+[exemplu din consola(2)](https://gcdnb.pbrd.co/images/rbu7ABCkvHbb.png?o=1)
 
 Metoda pentru numarul de abonamente premium:
-![](https://gcdnb.pbrd.co/images/0kKjfGpbMNvX.png?o=1)
+[exemplu din consola](https://gcdnb.pbrd.co/images/0kKjfGpbMNvX.png?o=1)
 
 Metoda pentru suma totala de plata:
-![](https://gcdnb.pbrd.co/images/ndj2FTonNPXk.png?o=1)
+[exemplu din consola](https://gcdnb.pbrd.co/images/ndj2FTonNPXk.png?o=1)
 
 Adaugarea a 2 clienti in lista:
-![](https://gcdnb.pbrd.co/images/sLZ5z5RuwArL.png?o=1)
+[exemplu din consola](https://gcdnb.pbrd.co/images/sLZ5z5RuwArL.png?o=1)
 
 Lista clienti actuala:
-![](https://gcdnb.pbrd.co/images/tAhuNmEdfLOf.png?o=1)
+[exemplu din consola](https://gcdnb.pbrd.co/images/tAhuNmEdfLOf.png?o=1)

@@ -1,5 +1,8 @@
 # <center> OOP-Projects-Year-1 </center>
 
+In this repository you can find all the small projects I made for my `Object Orientated Programming (C++)` class during my first year of University.
+The `README.md` files, comments and the requirements for each project are written in Romanian.
+
 #### [Proiectul 1: Coadă de numere reale(alocată dinamic) implementată ca un tablou unidimensional](https://github.com/ralucafritz/OOP-Projects-Year-1/tree/main/Project_1)
 - Are drept parametrii:
   - Dimensiunea stivei (int)
