@@ -317,7 +317,7 @@ Alegeti o optiune:
 ```
   
 Citire masini stoc: masini vandute (optiunea 1):   
-[exemplu din consola(1)](https://gcdnb.pbrd.co/images/RYkJrEM2FpF4.png?o=1)
+[exemplu din consola(1)](https://gcdnb.pbrd.co/images/RYkJrEM2FpF4.png?o=1)  
 [exemplu din consola(2)](ttps://gcdnb.pbrd.co/images/Cu74iYYdA4mZ.png?o=1)
 
 Afisare masini stoc + masini vandute (optiunea 2):    
